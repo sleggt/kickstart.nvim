@@ -4,7 +4,19 @@
 -- See the kickstart.nvim README for more information
 return {
 
-  'justinmk/vim-dirvish',
+  -- 'justinmk/vim-dirvish',
+  -- replaced vim-dirvish with oil
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    -- dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+  },
 
   'tpope/vim-unimpaired',
   'tpope/vim-surround',
@@ -13,7 +25,7 @@ return {
   -- niet zeker of dit handig/nodig is
   -- zonder deze plugin was syntax al highlighted, maar
   -- folding werkte niet. Check of folding ook met ingebouwde setting kan werken
-  'plasticboy/vim-markdown',
+  -- 'plasticboy/vim-markdown',
 
   'chrisbra/csv.vim',
   'sleggt/IEC.vim',
@@ -67,3 +79,4 @@ return {
     },
   },
 }
+-- vim: ts=2 sts=2 sw=2 et

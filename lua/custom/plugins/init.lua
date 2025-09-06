@@ -32,6 +32,7 @@ return {
     lazy = false,
   },
 
+  'tpope/vim-fugitive',
   'tpope/vim-unimpaired',
   'tpope/vim-surround',
   'tpope/vim-speeddating',

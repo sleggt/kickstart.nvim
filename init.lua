@@ -30,8 +30,8 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
--- [[ Custom ]]
-require 'custom.config.keymaps'
+-- [[ Custom configurations ]]
+-- these go (as far as possible) in the custom directory
+require 'custom.keymaps'
 
--- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

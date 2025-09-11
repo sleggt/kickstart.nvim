@@ -2,7 +2,7 @@
 
 Own configuration based on kickstart
 
-Started modularization, similar to kickstart-modular.nvim
+Modular, similar (almost identical) to kickstart-modular.nvim
 
 --]]
 

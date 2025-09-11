@@ -2,6 +2,9 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+--
+-- this file contains the 'simple' plugins that have little or no configuration
+-- the other files in this directory contain the other plugins
 return {
 
   'tpope/vim-fugitive',

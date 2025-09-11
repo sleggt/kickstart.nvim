@@ -1,18 +1,16 @@
--- Location for custom keymaps
--- added following recommendation in https://deepwiki.com/nvim-lua/kickstart.nvim/9-customization-guide
+-- [[ Custom keymaps ]]
 
--- See `:help telescope.builtin`
-vim.keymap.set('n', '=', require('telescope.builtin').oldfiles)
-vim.keymap.set('n', ';', require('telescope.builtin').buffers)
+vim.keymap.set('n', '=', require('telescope.builtin').oldfiles, { desc = 'Search Recent Files' })
+vim.keymap.set('n', ';', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
 
 -- previous and next buffer
-vim.keymap.set('n', '<C-H>', ':bp <enter>')
-vim.keymap.set('n', '<C-L>', ':bn <enter>')
+vim.keymap.set('n', '<C-H>', ':bp <enter>', { desc = 'Go to previous buffer in buffer list' })
+vim.keymap.set('n', '<C-L>', ':bn <enter>', { desc = 'Go to next buffer in buffer list' })
 
 -- Set the Vim working directory to directory of current file
-vim.keymap.set('n', '<leader>cd', ':cd %:p:h<CR>')
+vim.keymap.set('n', '<leader>cd', ':cd %:p:h<CR>', { desc = '[C]hange working [D]irectory to directory of current file' })
 -- Set the Vim local directory to directory of current file
-vim.keymap.set('n', '<leader>cl', ':lcd %:p:h<CR>')
+vim.keymap.set('n', '<leader>cl', ':lcd %:p:h<CR>', { desc = '[C]hange [L]ocal directory to directory of current file' })
 
 -- insert current date
 vim.keymap.set('n', '<F3>', 'a<C-R>=strftime("%Y-%m-%d")<CR> <Esc>')
@@ -21,7 +19,22 @@ vim.keymap.set('i', '<F3>', '<C-R>=strftime("%Y-%m-%d")<CR> ')
 vim.keymap.set('n', '<F4>', 'a<C-R>=strftime("%H:%M")<CR> <Esc>')
 vim.keymap.set('i', '<F4>', '<C-R>=strftime("%H:%M")<CR> ')
 
--- [[ Own keymaps ]]
+-- Oil
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+
+-- Figitive and Neogit mappings
+vim.keymap.set('n', '<leader>gn', '<CMD>Neogit cwd=%:p:h<CR>', { desc = 'Open [N]eogit using repo of current file' })
+vim.keymap.set('n', '<leader>gg', '<CMD>Git<CR>', { desc = 'Open Fu[G]itive' })
+
+-- Set which-key descriptions
+local wk = require 'which-key'
+wk.add {
+  { '<leader>c', group = '[C]hange directory' },
+  { '<leader>g', group = '[G]it' },
+  -- orgmode builtin keymaps
+  { '<leader>o', group = '[O]rg mode' },
+  { '<leader>oa', desc = '[O]rg mode [A]genda' },
+  { '<leader>oc', desc = '[O]rg mode [C]apture' },
+}
 
 -- vim: ts=2 sts=2 sw=2 et

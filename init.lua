@@ -33,5 +33,6 @@ require 'lazy-plugins'
 -- [[ Custom configurations ]]
 -- these go (as far as possible) in the custom directory
 require 'custom.keymaps'
+require 'custom.options'
 
 -- vim: ts=2 sts=2 sw=2 et

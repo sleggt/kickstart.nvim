@@ -15,6 +15,7 @@ return {
   -- niet zeker of dit handig/nodig is
   -- zonder deze plugin was syntax al highlighted, maar
   -- folding werkte niet. Check of folding ook met ingebouwde setting kan werken
+  -- folding blijkt te werken met vim.g.markdown_folding = 1 optie van ft-markdown-plugin
   -- 'plasticboy/vim-markdown',
 
   'chrisbra/csv.vim',

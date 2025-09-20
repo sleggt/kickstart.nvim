@@ -1,5 +1,8 @@
 -- [[ Custom keymaps ]]
 
+vim.keymap.set('n', '<leader>sF', function()
+  require('telescope.builtin').find_files { hidden = true }
+end, { desc = '[S]earch (hidden) [F]iles' })
 vim.keymap.set('n', '=', require('telescope.builtin').oldfiles, { desc = 'Search Recent Files' })
 vim.keymap.set('n', ';', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
 

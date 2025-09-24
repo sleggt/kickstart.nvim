@@ -6,8 +6,12 @@
 -- this file contains the 'simple' plugins that have little or no configuration
 -- the other files in this directory contain the other plugins
 return {
-
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set('n', '<leader>g', '<CMD>Git<CR>', { desc = 'Open Fu[G]itive' })
+    end,
+  },
   'tpope/vim-unimpaired',
   'tpope/vim-surround',
   'tpope/vim-speeddating',

@@ -22,12 +22,6 @@ vim.keymap.set('i', '<F3>', '<C-R>=strftime("%Y-%m-%d")<CR> ')
 vim.keymap.set('n', '<F4>', 'a<C-R>=strftime("%H:%M")<CR> <Esc>')
 vim.keymap.set('i', '<F4>', '<C-R>=strftime("%H:%M")<CR> ')
 
--- Oil
-vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-
--- Fugitive mapping
-vim.keymap.set('n', '<leader>g', '<CMD>Git<CR>', { desc = 'Open Fu[G]itive' })
-
 -- Set which-key descriptions
 local wk = require 'which-key'
 wk.add {

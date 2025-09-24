@@ -25,15 +25,13 @@ vim.keymap.set('i', '<F4>', '<C-R>=strftime("%H:%M")<CR> ')
 -- Oil
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 
--- Figitive and Neogit mappings
-vim.keymap.set('n', '<leader>gn', '<CMD>Neogit cwd=%:p:h<CR>', { desc = 'Open [N]eogit using repo of current file' })
-vim.keymap.set('n', '<leader>gg', '<CMD>Git<CR>', { desc = 'Open Fu[G]itive' })
+-- Fugitive mapping
+vim.keymap.set('n', '<leader>g', '<CMD>Git<CR>', { desc = 'Open Fu[G]itive' })
 
 -- Set which-key descriptions
 local wk = require 'which-key'
 wk.add {
   { '<leader>c', group = '[C]hange directory' },
-  { '<leader>g', group = '[G]it' },
   -- orgmode builtin keymaps
   { '<leader>o', group = '[O]rg mode' },
   { '<leader>oa', desc = '[O]rg mode [A]genda' },

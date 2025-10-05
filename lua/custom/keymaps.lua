@@ -1,8 +1,19 @@
 -- [[ Custom keymaps ]]
 
+-- Some cusom telescope keymaps
 vim.keymap.set('n', '<leader>sF', function()
   require('telescope.builtin').find_files { hidden = true }
 end, { desc = '[S]earch (hidden) [F]iles' })
+vim.keymap.set('n', '_', function(opts)
+  opts = opts or {}
+  opts.cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1]
+  if vim.v.shell_error ~= 0 then
+    -- if not git then directory of current file
+    opts.cwd = vim.fn.expand '%:p:h'
+    -- opts.cwd = vim.fn.expand '~'
+  end
+  require('telescope.builtin').find_files(opts)
+end, { desc = 'Search Files in git repo or from current buffer' })
 vim.keymap.set('n', '=', require('telescope.builtin').oldfiles, { desc = 'Search Recent Files' })
 vim.keymap.set('n', ';', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
 
@@ -26,6 +37,7 @@ vim.keymap.set('i', '<F4>', '<C-R>=strftime("%H:%M")<CR> ')
 local wk = require 'which-key'
 wk.add {
   { '<leader>c', group = '[C]hange directory' },
+  { '<leader>p', group = 'Markdown [P]eek' },
   -- orgmode builtin keymaps
   { '<leader>o', group = '[O]rg mode' },
   { '<leader>oa', desc = '[O]rg mode [A]genda' },
